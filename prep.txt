@@ -1,0 +1,90 @@
+------------------ OOPs Interview Question in java -------------------------------------------------------
+
+
+
+Ques.1 what is abstraction ?
+Ans:- Abstraction is hiding internal implementation and showing only relevent information.
+        In java, we achieve abstraction by 2 ways:-
+        1. by using abstract class
+        2. by using interface
+
+
+Ques.2 what is abstract class?
+Ans:-  Abstract class :- abstract class is a class that cannot be instantiated on its own.
+                         abstract class contains both :- -> abstract method (without a body)
+                                                         -> concrete method (with body)
+                         abstract class are used to define common behaviours.
+
+
+Ques.3 what is interface ?
+Ans:-   Interface:- An interface in java is a blueprint for a class. it specifies what a class must do.
+                    interface contains :- -> abstract method (without a body)
+                     from java 8 onwards  -> default and static method (with body)
+                     it can also contain constant variable.
+
+
+
+Ques.4 Explain static keyword ?
+Ans:-  static keyword is used to declare attributes and methods at class level. they are associate with class rather than object.
+       -> variable/methods declared static can be directly accessed using class name.
+
+        --> instance variable :- if the value of the object is varied from obj to obj then we should go for instance variable.
+        --> static variable :- if the value of the object is not varied from obj to obj then we should go for static variable.
+
+
+        ?? when to declare method as static ?
+        -->    use static for methods that don't depend on instance specific data or behaviour.
+         use static method for utility purpose : such as Math.sqrt() or Collections.sort().
+
+               -> avoid static for methods when the method relies on instance data, requires overriding.
+
+
+
+
+
+Ques.5 Difference between final, finally, finalize() ??
+Ans:-   final:- final is a modifier that can be applied to class, method and variable.
+                -> if we declare class as final, then we can't extend that class. it means we can't create child class of that class.
+                -> if we declare method as final, then we can't override that method.
+                -> if we declare variable as final, then it will become constant, and we can't perform re-assignment for that variable.
+
+        finally:- finally is a block which is associated with try catch block.
+                -> finally block execute always after try block, whether exception occur or not.
+                -> used to clean up activities related to try block such as close the db connection
+
+        finalize():- finalize() is a method, which is called by garbage collector before destroying an object.
+                -> used to clean up activities related to object.
+
+
+
+Ques. 6 what is jdk , jre and jvm ??
+Ans:- JDK :- Java Development Kit >> used to develop and run java application.
+            -> JDK provides environment to develop and run java application.
+            -> JDK = JRE + Dev tools
+
+      JRE :- Java Runtime Environment >> used to run java application. (for client m/c)
+            -> just to run java application.
+            -> JRE = JVM + library classes(java.lang, java.util)
+
+      JVM :- Java virtual Machine >> JVM is responsible to run our java program line by line.
+            -> jvm is an interpreter(execute code line by line).
+
+
+
+
+Ques. 7 Why java is platform independent ?
+Ans:- Java is platform independent because of JVM.
+            -> when we write and compile code, it is converted into bytecode.
+            -> This bytecode is note specific to any operating system, instead it can be run on any system.
+            -> The JVM on each platform(windows, linux, mac) reads the bytecode and translate it into machine specific code that can run on the system.
+
+            Hello.java ---->>> javac ---->>> Hello.class ---->>>
+           (src program)   (java compiler)   (java bytecode)
+
+           Note :- JVM is platform dependent.
+
+
+Ques. 8 what is jit compiler ?
+Ans:- jit compiler :- Just In Time Compiler in java is a part of JVM. that helps improve the performance of java applicaotion.
+            -> jit compiler translates java bytecode into m/c code while the program is running.
+            -> it improve performance , it mainly focuses on optimization part.
