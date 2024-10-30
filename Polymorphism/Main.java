@@ -71,11 +71,16 @@ public class Main {
 
 
 
+    /*
     // **** 2. Runtime Polymorphism :- Method Overriding.
 
+           -> if parent and child class have same method with same signature and same return type :
+                --> child class method has said to override parent class method. it is allowed
+                --> method overriding can be achieved by Inheritance.
 
 
 
+    */
 
 
 }
