@@ -1,4 +1,4 @@
-package OOPs;
+package OOPs.Polymorphism;
 
 
 // Polymorphism :- Many forms.
@@ -34,7 +34,7 @@ public class Main {
         obj.show();
         obj.show("RoEnish");
 
-      //  obj.main(1);
+        //  obj.main(1);
     }
 
     // *  ------------------------------------------------------------------------
