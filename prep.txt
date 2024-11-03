@@ -88,3 +88,69 @@ Ques. 8 what is jit compiler ?
 Ans:- jit compiler :- Just In Time Compiler in java is a part of JVM. that helps improve the performance of java applicaotion.
             -> jit compiler translates java bytecode into m/c code while the program is running.
             -> it improve performance , it mainly focuses on optimization part.
+
+
+
+
+Ques. 9 difference between String, StringBuffer and StringBuilder in java ?
+Ans:-
+
+
+
+Here’s a simple breakdown of String, StringBuffer, and StringBuilder in Java, along with their differences, usage, and mutability.
+
+1. String
+Immutable: Once a String object is created, it cannot be changed. If you modify it, Java creates a new String object instead.
+Thread-safe: Since String is immutable, it's safe to use in multi-threaded environments without synchronization.
+When to Use: Use String when you don’t need to modify the text content, like storing fixed messages or small text operations.
+java
+Copy code
+String text = "Hello";
+text = text + " World"; // Creates a new "Hello World" object, original "Hello" remains unchanged
+
+
+2. StringBuffer
+Mutable: StringBuffer allows modification of the text content, so you can append, insert, or delete text within the same object.
+Thread-safe: Methods in StringBuffer are synchronized, which means it is safe for use in multi-threaded environments.
+When to Use: Use StringBuffer when you need to modify strings (e.g., in loops) and need thread safety.
+java
+Copy code
+StringBuffer sb = new StringBuffer("Hello");
+sb.append(" World"); // Modifies the same object, no new object created
+System.out.println(sb); // Output: Hello World
+
+
+3. StringBuilder
+Mutable: Like StringBuffer, StringBuilder is mutable, so you can modify its content.
+Not Thread-safe: StringBuilder is not synchronized, making it unsafe for use with multiple threads. However, this also makes it faster than StringBuffer.
+When to Use: Use StringBuilder when you need to modify strings and don’t need thread safety (e.g., in single-threaded applications).
+java
+Copy code
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World"); // Modifies the same object
+System.out.println(sb); // Output: Hello World
+
+
+
+Summary of Differences:-
+
+Feature     	    String          	     >> StringBuffer            	             >> StringBuilder
+Mutability          Immutable         	     >> Mutable	                                 >> Mutable
+Thread Safety	   Thread-safe      	     >> Thread-safe                              >>  Not thread-safe
+Performance	    Slower for modifications   	>> Slower than StringBuilder but thread-safe	>>  Faster, but not thread-safe
+
+               Use Case
+                Fixed text or few modifications
+                Frequent modifications with thread safety
+                Frequent modifications without thread safety
+
+
+
+Explanation of Mutability
+    -> Mutable means that the object’s content can be changed without creating a new object.
+    -> Immutable means that once created, the object cannot be changed; modifications create a new object.
+
+Choosing Which to Use :-
+    -> Use String for text that won’t change, for example, constant messages.
+    -> Use StringBuffer when you need to modify strings in a multi-threaded environment.
+    -> Use StringBuilder for faster string modifications in a single-threaded context where thread safety isn’t required.
